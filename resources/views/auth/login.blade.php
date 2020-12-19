@@ -46,7 +46,7 @@
                         {{ __('Forgot your password?') }}
                     </a>
                 @endif
-                    <script async src="https://telegram.org/js/telegram-widget.js?14" data-telegram-login="AliceLoginWidgetBot" data-size="large" data-auth-url="/telegram_login"></script>
+                    <div class="tgme_widget_login medium nouserpic" id="widget_login"><button class="btn tgme_widget_login_button" onclick="return TWidgetLogin.auth();"><i class="tgme_widget_login_button_icon"></i>Log in with Telegram</button></div>
                 <x-button class="ml-3">
                     {{ __('Login') }}
                 </x-button>
