@@ -55,6 +55,7 @@ services:
 
 networks:
     sail:
+        enable_ipv6: false
         driver: bridge
 volumes:
     sailmysql:
