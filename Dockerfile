@@ -32,4 +32,6 @@ RUN mkdir -p /home/$user/.composer && \
 # Set working directory
 WORKDIR /var/www
 
+RUN chown -R www-data:www-data /var/www
+
 USER $user
