@@ -34,8 +34,6 @@ services:
             - sail
     redis:
         image: redis:alpine
-        ports:
-            - '${FORWARD_REDIS_PORT:-6379}:6379'
         volumes:
             - 'sailredis:/data'
         networks:
@@ -49,9 +47,11 @@ services:
         - 8000:80
       volumes:
         - ./:/var/www
-        - ./storage/server:/etc/nginx/conf.d/
+        - ./storage/server:/etc/nginx/templates
       networks:
         - sail
+      environment:
+        - NGINX_HOST=${SERVER_NAME}
 
 networks:
     sail:
