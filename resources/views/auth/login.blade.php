@@ -47,7 +47,7 @@
                     </a>
                 @endif
                 @if (env('TELEGRAM_BOT_TOKEN') and env('TELEGRAM_BOT_NAME'))
-                        <script async src="https://telegram.org/js/telegram-widget.js?14" data-telegram-login="{{ env('TELEGRAM_BOT_NAME') }}" data-size="large" data-auth-url="/telegram"></script>
+                        <script async src="https://telegram.org/js/telegram-widget.js?14" data-telegram-login="{{ env('TELEGRAM_BOT_NAME') }}" data-size="large" data-auth-url="{{ env('APP_URL') }}/auth/telegram/callback"></script>
                 @endif
                 <x-button class="ml-3">
                     {{ __('Login') }}
