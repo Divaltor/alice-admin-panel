@@ -46,7 +46,9 @@
                         {{ __('Forgot your password?') }}
                     </a>
                 @endif
-                    <div class="tgme_widget_login medium nouserpic" id="widget_login"><button class="btn tgme_widget_login_button" onclick="return TWidgetLogin.auth();"><i class="tgme_widget_login_button_icon"></i>Log in with Telegram</button></div>
+                @if (env('TELEGRAM_BOT_TOKEN') and env('TELEGRAM_BOT_NAME'))
+                        <script async src="https://telegram.org/js/telegram-widget.js?14" data-telegram-login="{{ env('TELEGRAM_BOT_NAME') }}" data-size="large" data-auth-url="/telegram"></script>
+                @endif
                 <x-button class="ml-3">
                     {{ __('Login') }}
                 </x-button>
