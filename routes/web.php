@@ -22,3 +22,5 @@ Route::get('/auth/telegram/callback', [\App\Http\Controllers\Auth\TelegramContro
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+require __DIR__ . 'auth.php';
