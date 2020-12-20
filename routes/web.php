@@ -15,10 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
-})->middleware(['auth']);
+})->middleware(['auth'])->name('index');
+
+Route::get('/auth/telegram/callback', [\App\Http\Controllers\Auth\TelegramController::class, 'handleTelegramCallback'])->name('auth.telegram.handle');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
-
-require __DIR__.'/auth.php';
