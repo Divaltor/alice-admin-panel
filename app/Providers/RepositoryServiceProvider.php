@@ -17,7 +17,8 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(EloquentRepositoryInterface::class, BaseRepository::class);
+        $this->app->bind(UserRepositoryInterface::class, UserRepository::class);
     }
 
     /**
@@ -27,7 +28,6 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->app->bind(EloquentRepositoryInterface::class, BaseRepository::class);
-        $this->app->bind(UserRepositoryInterface::class, UserRepository::class);
+
     }
 }

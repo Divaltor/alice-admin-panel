@@ -32,4 +32,13 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
     {
         return $this->model->all();
     }
+
+    /**
+     * @param $id
+     * @return User|null
+     */
+    public function findByTelegramId($id): ?User
+    {
+        return User::where('telegram_id', $id)->first();
+    }
 }
